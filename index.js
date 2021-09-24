@@ -49,7 +49,7 @@ const handleAction = async () => {
   }
   const audio = await recorder.stop();
   audio.play();
-  await sleep(3000);
+//   await sleep(3000);
   actionButton.disabled = false;
 
 }
