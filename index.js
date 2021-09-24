@@ -1,4 +1,6 @@
+
 const recordAudio = () =>
+
   new Promise(async resolve => {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     const mediaRecorder = new MediaRecorder(stream);
@@ -24,18 +26,30 @@ const recordAudio = () =>
       });
 
     resolve({ start, stop });
+
   });
+
+    // document.getElementById('error').style.opacity = '1';
 
 const sleep = time => new Promise(resolve => setTimeout(resolve, time));
 
 const handleAction = async () => {
-  const recorder = await recordAudio();
+    // const recorder;
+    // try {
+        const recorder = await recordAudio();
+    // } catch {
+    //     document.getElementById('error').style.opacity = '1';
+    // }
+
   const actionButton = document.getElementById('action');
   actionButton.disabled = true;
   recorder.start();
-  await sleep(3000);
+  while(document.querySelector('button:active')){
+  await sleep(10);
+  }
   const audio = await recorder.stop();
   audio.play();
   await sleep(3000);
   actionButton.disabled = false;
+
 }
