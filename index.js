@@ -42,14 +42,14 @@ const handleAction = async () => {
     // }
 
   const actionButton = document.getElementById('action');
-  actionButton.disabled = true;
+//   actionButton.disabled = true;
   recorder.start();
-  while(document.querySelector('button:active')){
+  while(document.querySelector('#action:active')){
   await sleep(10);
   }
   const audio = await recorder.stop();
   audio.play();
-//   await sleep(3000);
-  actionButton.disabled = false;
+//   await sleep(3000);fix
+//   actionButton.disabled = false;
 
 }
