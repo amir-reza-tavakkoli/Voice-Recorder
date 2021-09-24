@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+main {
+    height: 80%;
+    width:60%;
+    background-color: tomato;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.record {
+    display: block;
+}
+
+.record button {
+    appearance: none;
+    border: none;
+    background-color: transparent;
+}
+
+.record button > svg {
+    width: 20%;
+    height: 20%;
+    /* background-color: blue; */
+}
+
+.record button > svg:active {
+    transform: scale(0.8);
+}
