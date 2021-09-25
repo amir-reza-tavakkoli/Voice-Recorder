@@ -42,11 +42,14 @@ const handleAction = async () => {
     // }
 
   // const actionButton = document.getElementById('action');
+  document.getElementById('action').style.animation = 'i 4s ease-in-out 0ms infinite'
 //   actionButton.disabled = true;
+
   recorder.start();
 }
 
 const handleAction2 = async () => {
+  document.getElementById('action').style.animation = 'none'
   const audio = await recorder.stop();
   audio.play();
 //   await sleep(3000);fix
