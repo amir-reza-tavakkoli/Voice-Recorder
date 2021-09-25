@@ -44,7 +44,7 @@ const handleAction = async () => {
   // const actionButton = document.getElementById('action');
 //   actionButton.disabled = true;
   recorder.start();
-  document.getElementById('action').addEventListener('pointerup', handleAction2(recorder))
+  document.getElementById('action').addEventListener('touchend', handleAction2(recorder))
 }
 const handleAction2 = async (recorder) => {
   const audio = await recorder.stop();
