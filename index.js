@@ -41,12 +41,12 @@ const handleAction = async () => {
     //     document.getElementById('error').style.opacity = '1';
     // }
 
-  const actionButton = document.getElementById('action');
+  // const actionButton = document.getElementById('action');
 //   actionButton.disabled = true;
   recorder.start();
-  while(document.querySelector('#action:active')){
-  await sleep(10);
-  }
+  document.getElementById('action').addEventListener('pointerup', handleAction2(recorder))
+}
+const handleAction2 = async (recorder) => {
   const audio = await recorder.stop();
   audio.play();
 //   await sleep(3000);fix
