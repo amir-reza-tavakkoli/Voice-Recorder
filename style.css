@@ -4,6 +4,21 @@
     box-sizing: border-box;
     transition: all 1s ease-out;
 }
+
+@keyframes i {
+    from {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.8);
+    }
+    75% {
+        transform: scale(1.2);
+    }
+    to {
+        transform: scale(1);
+    }
+}
 html {
     font-size: 10px;
 }
@@ -25,7 +40,9 @@ main {
     justify-content: center;
     align-items: center;
 }
-
+main p {
+    margin-top: 10px;
+}
 .record {
     display: block;
 }
@@ -43,7 +60,8 @@ main {
 }
 
 .record button > svg:active {
-    transform: scale(0.8);
+    animation: i 4s ease-in-out 0ms infinite;
+
 }
 body > p{
     position: fixed;

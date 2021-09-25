@@ -32,11 +32,11 @@ const recordAudio = () =>
     // document.getElementById('error').style.opacity = '1';
 
 const sleep = time => new Promise(resolve => setTimeout(resolve, time));
-
+const recorder = null;
 const handleAction = async () => {
     // const recorder;
     // try {
-        const recorder = await recordAudio();
+        recorder = await recordAudio();
     // } catch {
     //     document.getElementById('error').style.opacity = '1';
     // }
@@ -44,12 +44,13 @@ const handleAction = async () => {
   // const actionButton = document.getElementById('action');
 //   actionButton.disabled = true;
   recorder.start();
-  document.getElementById('action').addEventListener('touchend', handleAction2(recorder))
 }
-const handleAction2 = async (recorder) => {
+
+const handleAction2 = async () => {
   const audio = await recorder.stop();
   audio.play();
 //   await sleep(3000);fix
 //   actionButton.disabled = false;
+recorder = null;
 
 }
