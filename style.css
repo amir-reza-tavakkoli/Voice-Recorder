@@ -2,22 +2,25 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    transition: all 1s ease-out;
+    transition: all 1s linear;
+}
+button {
+    background-color: transparent;
+    appearance: none;
+
 }
 
 @keyframes i {
-    from {
-        transform: scale(1);
-    }
+
     25% {
         transform: scale(0.8);
     }
     75% {
         transform: scale(1.2);
     }
-    to {
+    /* to {
         transform: scale(1);
-    }
+    } */
 }
 html {
     font-size: 10px;
@@ -43,23 +46,21 @@ main {
 main p {
     margin-top: 10px;
 }
-.record {
-    display: block;
-}
 
-.record button {
+
+/* .record svg {
     appearance: none;
     border: none;
     background-color: transparent;
-}
+} */
 
-.record button > svg {
+.record  svg {
     width: 20%;
     height: 20%;
     /* background-color: blue; */
 }
 
-.record button > svg:active {
+.record > svg {
     animation: i 4s ease-in-out 0ms infinite;
 
 }

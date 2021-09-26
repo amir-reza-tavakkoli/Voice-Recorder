@@ -32,28 +32,39 @@ const recordAudio = () =>
     // document.getElementById('error').style.opacity = '1';
 
 const sleep = time => new Promise(resolve => setTimeout(resolve, time));
-const recorder = null;
+
+
+
+
+
+// let anim = document.getElementById('v').style.animation;
+// document.getElementById('v').style.animation = '0s';
+x.addEventListener('click', () => handleAction)
 const handleAction = async () => {
-    // const recorder;
-    // try {
-        recorder = await recordAudio();
-    // } catch {
-    //     document.getElementById('error').style.opacity = '1';
-    // }
+  // document.getElementById('v').style.animation = anim
+  // document.getElementById('x').textContent = 'stop';
+  // document.getElementById('x').onclick = handleAction2();
+  let o = 0;
+  s.addEventListener('click', () => {
+    o = 1;
+  })
+    const recorder = await recordAudio();
+    recorder.start();
 
-  // const actionButton = document.getElementById('action');
-  document.getElementById('action').style.animation = 'i 4s ease-in-out 0ms infinite'
-//   actionButton.disabled = true;
-
-  recorder.start();
-}
-
-const handleAction2 = async () => {
-  document.getElementById('action').style.animation = 'none'
+  while (o == 1){
+    await sleep(10);
+  }
   const audio = await recorder.stop();
   audio.play();
-//   await sleep(3000);fix
-//   actionButton.disabled = false;
-recorder = null;
-
+  // document.getElementById('v').style.animation = '0s';
+  // document.getElementById('x').textContent = 'stop';
 }
+
+// const handleAction2 = async () => {
+
+
+// //   await sleep(3000);fix
+// //   actionButton.disabled = false;
+//     recorder = null;
+
+// }
