@@ -52,10 +52,10 @@ const handleAction = async () => {
   // })
     const recorder = await recordAudio();
     recorder.start();
-
-  while (o == 0){
-    await sleep(10);
-  }
+await sleep(3000);
+  // while (o == 0){
+  //   await sleep(10);
+  // }
   const audio = await recorder.stop();
   audio.play();
   // document.getElementById('v').style.animation = '0s';
