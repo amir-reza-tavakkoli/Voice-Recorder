@@ -35,23 +35,25 @@ const sleep = time => new Promise(resolve => setTimeout(resolve, time));
 
 
 
-
+function w() {
+  o = 1;
+}
 
 // let anim = document.getElementById('v').style.animation;
 // document.getElementById('v').style.animation = '0s';
-x.addEventListener('click', () => handleAction)
+// x.addEventListener('click', () => handleAction)
 const handleAction = async () => {
   // document.getElementById('v').style.animation = anim
   // document.getElementById('x').textContent = 'stop';
   // document.getElementById('x').onclick = handleAction2();
   let o = 0;
-  s.addEventListener('click', () => {
-    o = 1;
-  })
+  // s.addEventListener('click', () => {
+  //   o = 1;
+  // })
     const recorder = await recordAudio();
     recorder.start();
 
-  while (o == 1){
+  while (o == 0){
     await sleep(10);
   }
   const audio = await recorder.stop();
